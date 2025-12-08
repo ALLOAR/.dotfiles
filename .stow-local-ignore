@@ -1,3 +1,4 @@
+powerlevel10k
 .*\.sh$
 \.env
 .*\.git$
