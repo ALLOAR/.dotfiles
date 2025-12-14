@@ -1,4 +1,5 @@
 powerlevel10k
+steam
 .*\.sh$
 \.env
 .*\.git$
