@@ -85,7 +85,8 @@
         "format-disconnected" : "󰣵",
         "interval": 5,
         "tooltip": false,
-	"on-click": "hyprctl dispatch exec \"[float; size 500 100; move 1400 37] alacritty -e ping google.com\""
+	"on-click": "hyprctl dispatch exec \"[float; size 500 100; move 1400 37] alacritty -e ping google.com\"",
+	"on-click-right": "nmcli -t -f IN-USE,SSID dev wifi | awk -F: '/^\\*/ {print $2}'"
     },
 
 "temperature": {
