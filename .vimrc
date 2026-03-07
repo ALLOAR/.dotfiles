@@ -1,6 +1,7 @@
 syntax on
 set number
 set clipboard=unnamedplus
+set relativenumber
 " Использовать wl-clipboard для взаимодействия с системным буфером
 if executable('wl-copy') && executable('wl-paste')
   " yank в системный буфер
