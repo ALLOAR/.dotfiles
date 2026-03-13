@@ -9,6 +9,8 @@ input {
     // numlock
   }
 
+
+
   touchpad {
     tap
     accel-speed 0.1
@@ -41,7 +43,7 @@ input {
 
   // Focus windows and outputs automatically when moving the mouse into them.
   // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-  focus-follows-mouse max-scroll-amount="0%"
+  focus-follows-mouse max-scroll-amount="100%"
 }
 
 
@@ -49,7 +51,7 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
-  gaps 16
+  gaps 16 
 
   // When to center a column when changing focus, options are:
   // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -64,10 +66,10 @@ layout {
     // Proportion sets the width as a fraction of the output width, taking gaps into account.
     // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
     // The default preset widths are 1/3, 1/2 and 2/3 of the output.
-    proportion 0.5
-    proportion 0.66
     proportion 0.33
-
+    proportion 0.5
+	proportion 0.66
+	proportion 1.0
     // Fixed sets the width in logical pixels exactly.
     // fixed 1920
   }
@@ -103,10 +105,11 @@ layout {
   // You can also add a border. It's similar to the focus ring, but always visible.
   border {
     // off
-    width 5
+    width 6
     inactive-color "#3c3836"
-    active-gradient from="#d65d0e" to="#98971a" angle=135
-    urgent-color "#cc241d"
+ //   active-gradient from="#d65d0e" to="#98971a" angle=135
+   active-gradient from="#7FAAC5" to="#2E3440" angle=135
+   urgent-color "#cc241d"
   }
 
   // You can enable drop shadows for windows.
@@ -114,15 +117,17 @@ layout {
     off
   }
 }
+spawn-sh-at-startup "export DISPLAY=:0"
+spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "swww-daemon"
 spawn-at-startup "swww img .config/hypr/dark_winter_bridge.jpg"
 spawn-at-startup "firefox"
 spawn-at-startup "Telegram"
-spawn-at-startup "vesktop"
+spawn-sh-at-startup "sleep 1 && vesktop"
 spawn-sh-at-startup "waybar"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-
+spawn-at-startup "steam"
 hotkey-overlay {
   // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
   // skip-at-startup
@@ -214,21 +219,29 @@ workspace "8"
 window-rule {
   match app-id="obsidian"
   open-on-workspace "2"
+  default-column-width { proportion 1.0; }
 }
 window-rule { 
     match app-id="firefox"
     open-on-workspace "3"
+	default-column-width { proportion 1.0; }
 }
 window-rule {
   match app-id="org.telegram.desktop"
   open-on-workspace "4"
+  default-column-width { proportion 0.60; }
+}
+window-rule {
+	match app-id="vesktop"
+	open-on-workspace "4"
+	default-column-width { proportion 0.60; }
 }
 
 window-rule {
-  match app-id="vesktop"
-  open-on-workspace "4"
+	match app-id="steam"
+	open-on-workspace "5"
+	default-column-width { proportion 1.0; }
 }
-
 window-rule {
   match app-id="showmethekey-gtk"
   open-floating true
@@ -518,9 +531,10 @@ binds {
   // Mod+Space       { switch-layout "next"; }
   // Mod+Shift+Space { switch-layout "prev"; }
 
-  Print { screenshot; }
-  Ctrl+Print { screenshot-screen; }
-  Alt+Print { screenshot-window; }
+  //Print { screenshot; }
+  Mod+Page_Up { screenshot; }
+  Ctrl+Page_Up { screenshot-screen; }
+  Alt+Page_Up { screenshot-window; }
 
   // Applications such as remote-desktop clients and software KVM switches may
   // request that niri stops processing the keyboard shortcuts defined here
