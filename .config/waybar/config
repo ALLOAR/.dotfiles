@@ -1,10 +1,10 @@
 {
     "layer": "top",
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "custom/bluetooth", "custom/window-title" ],
+    "modules-left": ["custom/launcher", "niri/workspaces", "custom/bluetooth", "custom/window-title" ],
     "modules-center": ["temperature", "cpu", "clock", "memory", "pulseaudio"],
-    "modules-right": ["custom/youtube-music", "custom/firefox", "custom/steam", "custom/discord", "custom/telegram-desktop", "custom/alacritty", "network", "battery", "hyprland/language", "disk", "custom/power"],
+    "modules-right": ["custom/youtube-music", "custom/firefox", "custom/steam", "custom/discord", "custom/telegram-desktop", "custom/alacritty", "network", "battery", "niri/language", "disk", "custom/power"],
     
-"hyprland/workspaces": {
+"niri/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
@@ -21,7 +21,7 @@
     }
     },
 
-"hyprland/language": {
+"niri/language": {
     "format-en": "US",
     "format-ru": "RU",
     "min-length": 5,
