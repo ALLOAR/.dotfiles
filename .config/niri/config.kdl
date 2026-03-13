@@ -114,7 +114,7 @@ layout {
     off
   }
 }
-
+spawn-sh-at-startup "swww-daemon"
 spawn-at-startup "swww img .config/hypr/dark_winter_bridge.jpg"
 spawn-at-startup "firefox"
 spawn-at-startup "Telegram"
