@@ -114,8 +114,8 @@ layout {
     off
   }
 }
-spawn-at-startup "swww-daemon"
-spawn-sh-at-startup "swww img /home/$USER/.config/niri/dark_winter_bridge.jpg"
+
+spawn-at-startup "swww img .config/hypr/dark_winter_bridge.jpg"
 spawn-at-startup "firefox"
 spawn-at-startup "Telegram"
 spawn-at-startup "vesktop"
