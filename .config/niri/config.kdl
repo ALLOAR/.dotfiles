@@ -117,6 +117,7 @@ layout {
     off
   }
 }
+spawn-at-startup "easyeffects"
 spawn-sh-at-startup "export DISPLAY=:0"
 spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "swww-daemon"
@@ -128,6 +129,7 @@ spawn-sh-at-startup "waybar"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "steam"
+spawn-at-startup "obsidian"
 hotkey-overlay {
   // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
   // skip-at-startup
@@ -240,6 +242,11 @@ window-rule {
 window-rule {
 	match app-id="steam"
 	open-on-workspace "5"
+	default-column-width { proportion 1.0; }
+}
+window-rule {
+	match app-id="com.github.wwmm.easyeffects"
+	open-on-workspace "6"
 	default-column-width { proportion 1.0; }
 }
 window-rule {
@@ -551,6 +558,7 @@ binds {
   // Ctrl+Alt+Delete { quit; }
 
   Mod+Space { spawn "wofi"; }
+  Mod+H { spawn-sh "dunstctl history-pop"; }
 
   // Powers off the monitors. To turn them back on, do any input like
   // moving the mouse or pressing any other key.
