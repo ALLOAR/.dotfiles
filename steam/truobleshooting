@@ -1,0 +1,1 @@
+if disk write error, you need try mount him on some directory in home, like ~/data instead of classical /data mount
