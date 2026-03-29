@@ -335,8 +335,8 @@ binds {
   // Brightness control
   Mod+Shift+BracketRight allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
   Mod+Shift+BracketLeft allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
-  // XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-  // XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+   XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
+   XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
   // Open/close the Overview: a zoomed-out view of workspaces and windows.
   Mod+O repeat=false { toggle-overview; }
