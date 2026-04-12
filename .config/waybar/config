@@ -134,7 +134,7 @@
 		"phone-muted": "",
 		"portable": "",
 		"car": "",
-		"default": ["", ""]
+		"default": ["", " "]
         }
     },
 

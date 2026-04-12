@@ -4,6 +4,9 @@ Thats need if you use offload grafic mode (like 2 GPU)
 for terraria if not work keys 
 SDL_VIDEODRIVER=x11 XMODIFIERS="" GTK_IM_MODULE=none %command%
 
+if game bad react on focus lost
+SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0 %command%
+
 export __NV_PRIME_RENDER_OFFLOAD=1
 export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
 export __GLX_VENDOR_LIBRARY_NAME=nvidia
