@@ -1,8 +1,8 @@
 {
     "layer": "top",
-    "modules-left": ["custom/launcher", "niri/workspaces", "custom/bluetooth", "custom/window-title" ],
+    "modules-left": ["custom/launcher", "niri/workspaces", "custom/bluetooth", "custom/window-title","custom/active_wifi"],
     "modules-center": ["temperature", "cpu", "clock", "memory", "pulseaudio"],
-    "modules-right": ["custom/youtube-music", "custom/firefox", "custom/steam", "custom/discord", "custom/telegram-desktop", "custom/alacritty", "network", "battery", "niri/language", "disk", "custom/power"],
+    "modules-right": ["custom/youtube-music", "custom/firefox", "custom/telegram-desktop", "custom/alacritty", "network", "battery", "niri/language", "disk", "custom/power"],
     
 "niri/workspaces": {
     "format": "{icon}",
@@ -33,6 +33,13 @@
   "interval": 30,
   "tooltip": false
 },
+"custom/active_wifi": {
+  "exec": "nmcli d w l | awk '$1==\"*\" {print $3}'",
+  "interval": 5,
+  "tooltip": false
+},
+
+
 
 "custom/alacritty": {
     "format": "  ",  

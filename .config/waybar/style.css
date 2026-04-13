@@ -28,6 +28,16 @@ window#waybar {
         font-size: 17px;
 	margin-top: 2px;
 }
+#custom-active_wifi {
+	background-color: #2A3239;
+	margin-right: 7px;
+	margin-left: 7px;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-top: 2px;
+}
+
+
 #custom-firefox, #custom-steam, #custom-discord, #custom-telegram-desktop, #custom-alacritty, #custom-youtube-music, #custom-keyboard {
 	background-color: #2A3239;
 	margin-right: 4px;
