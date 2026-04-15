@@ -162,7 +162,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "󰍛 {percentage}%",
+        "format": "  {percentage}%",
         "max-length": 10
     },
 
