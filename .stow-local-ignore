@@ -4,3 +4,5 @@ steam
 \.env
 .*\.git$
 h
+hypridle.conf
+hyprlock.conf

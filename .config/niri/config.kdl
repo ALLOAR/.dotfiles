@@ -81,7 +81,7 @@ layout {
   }
 
   // Default width of the new windows.
-  default-column-width { proportion 0.5; }
+  default-column-width { proportion 0.66; }
 
   // By default focus ring and border are rendered as a solid background rectangle
   // behind windows. That is, they will show up through semitransparent windows.
@@ -207,7 +207,7 @@ workspace "5"
 workspace "6"
 workspace "7"
 workspace "8"
-// workspace "9"
+//workspace "9"
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -217,6 +217,12 @@ workspace "8"
 //   match app-id="chromium|firefox|obsidian|vesktop|org.telegram.desktop|^blender$"
 //   open-maximized-to-edges true
 // }
+
+// TO GET APP-ID USE niri msg windows
+
+window-rule {
+	match app-id="Alacritty"
+}
 
 window-rule {
   match app-id="obsidian"
@@ -345,25 +351,25 @@ binds {
   Mod+C repeat=false { close-window; }
 
   // Change focus
-  Mod+Left  { focus-column-left; }
-  Mod+Down  { focus-window-down; }
-  Mod+Up    { focus-window-up; }
-  Mod+Right { focus-column-right; }
+  //Mod+Left  { focus-column-left; }
+  //Mod+Down  { focus-window-down; }
+  //Mod+Up    { focus-window-up; }
+  //Mod+Right { focus-column-right; }
   // Commented to exclude conflicts with other binds
-  // Mod+H     { focus-column-left; }
-  // Mod+J     { focus-window-down; }
-  // Mod+K     { focus-window-up; }
-  // Mod+L     { focus-column-right; }
+  Mod+H     { focus-column-left; }
+  Mod+J     { focus-window-down; }
+  Mod+K     { focus-window-up; }
+  Mod+L     { focus-column-right; }
 
   // Move windows
-  Mod+Shift+Left  { move-column-left; }
-  Mod+Shift+Down  { move-window-down; }
-  Mod+Shift+Up    { move-window-up; }
-  Mod+Shift+Right { move-column-right; }
-  // Mod+Shift+H     { move-column-left; }
-  // Mod+Shift+J     { move-window-down; }
-  // Mod+Shift+K     { move-window-up; }
-  // Mod+Shift+L     { move-column-right; }
+  //Mod+Shift+Left  { move-column-left; }
+  //Mod+Shift+Down  { move-window-down; }
+  //Mod+Shift+Up    { move-window-up; }
+  //Mod+Shift+Right { move-column-right; }
+  Mod+Shift+H     { move-column-left; }
+  Mod+Shift+J     { move-window-down; }
+  Mod+Shift+K     { move-window-up; }
+  Mod+Shift+L     { move-column-right; }
 
   // Alternative commands that move across workspaces when reaching
   // the first or last window in a column.
@@ -418,10 +424,10 @@ binds {
   // To avoid scrolling through workspaces really fast, you can use
   // the cooldown-ms property. The bind will be rate-limited to this value.
   // You can set a cooldown on any bind, but it's most useful for the wheel.
-  Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
-  Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
-  Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
-  Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+  Mod+WheelScrollDown      cooldown-ms=0 { focus-workspace-down; }
+  Mod+WheelScrollUp        cooldown-ms=0 { focus-workspace-up; }
+  Mod+Ctrl+WheelScrollDown cooldown-ms=0 { move-column-to-workspace-down; }
+  Mod+Ctrl+WheelScrollUp   cooldown-ms=0 { move-column-to-workspace-up; }
 
   Mod+WheelScrollRight      { focus-column-right; }
   Mod+WheelScrollLeft       { focus-column-left; }
@@ -475,7 +481,7 @@ binds {
   // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
   // Switches focus between the current and the previous workspace.
-  Mod+Tab { focus-workspace-previous; }
+  Alt+Tab { focus-workspace-previous; }
 
   // The following binds move the focused window in and out of a column.
   // If the window is alone, they will consume it into the nearby column to the side.
@@ -501,7 +507,7 @@ binds {
   // Makes the column "fill the rest of the space".
   Mod+Ctrl+F { expand-column-to-available-width; }
 
-  Mod+Shift+C { center-column; }
+  Mod+Q { center-column; }
 
   // Center all fully visible columns on screen.
   // Mod+Ctrl+C { center-visible-columns; }
@@ -558,7 +564,7 @@ binds {
   // Ctrl+Alt+Delete { quit; }
 
   Mod+Space { spawn "wofi"; }
-  Mod+H { spawn-sh "dunstctl history-pop"; }
+  Mod+Ctrl+H { spawn-sh "dunstctl history-pop"; }
 
   // Powers off the monitors. To turn them back on, do any input like
   // moving the mouse or pressing any other key.
