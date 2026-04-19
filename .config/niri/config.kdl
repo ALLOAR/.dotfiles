@@ -117,6 +117,7 @@ layout {
     off
   }
 }
+spawn-at-startup "youtube-music"
 spawn-at-startup "easyeffects"
 spawn-sh-at-startup "export DISPLAY=:0"
 spawn-at-startup "xwayland-satellite"
@@ -221,12 +222,6 @@ workspace "8"
 // TO GET APP-ID USE niri msg windows
 
 window-rule {
-	match app-id="com.github.th_ch.youtube_music"
-	open-on-workspace "8"
-	default-column-width { proportion 1.0; }
-}
-
-window-rule {
 	match app-id="Alacritty"
 }
 
@@ -328,7 +323,7 @@ binds {
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
   Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
-  Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+  Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
   Mod+N hotkey-overlay-title="Notification center" { spawn-sh "swaync-client -t"; }
   Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
@@ -537,7 +532,7 @@ binds {
   Mod+V       { toggle-window-floating; }
   Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
-  // Toggle tabbed column display mode.
+  // ToQbbed column display mode.
   // Windows in this column will appear as vertical tabs,
   // rather than stacked on top of each other.
   Mod+W { toggle-column-tabbed-display; }
@@ -569,7 +564,7 @@ binds {
   Mod+Shift+E { quit; }
   // Ctrl+Alt+Delete { quit; }
 
-  // Mod+Space { spawn "wofi"; }
+  Mod+Space { spawn "wofi"; }
   Mod+Ctrl+H { spawn-sh "dunstctl history-pop"; }
 
   // Powers off the monitors. To turn them back on, do any input like
