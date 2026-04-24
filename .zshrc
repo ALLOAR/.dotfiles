@@ -3,6 +3,20 @@ fastfetch
 alias rebuildl="sudo nixos-rebuild switch --flake .#laptop"
 alias rebuildp="sudo nixos-rebuild switch --flake .#pc"
 
+wi() {
+    local wifi_name="$1"
+	if [[ "$wifi_name" == "l" ]]; then
+			nmcli d w l
+			return
+	fi
+
+    if [[ -z "$wifi_name" ]]; then
+			read "wifi_name? --- Enter a wifi name --- "
+	fi
+
+    sudo nmcli d wifi connect "$wifi_name" --ask
+}
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
