@@ -1,4 +1,5 @@
 // Input device configuration.
+
 input {
   keyboard {
     xkb {
@@ -46,7 +47,50 @@ input {
   focus-follows-mouse max-scroll-amount="100%"
 }
 
+output "DP-1" {
+    mode "2560x1440@180.002"
+    focus-at-startup
+}
+output "HDMI-A-1" {
+	mode "1920x1080@74.973"
+	transform "270"
+}
 
+workspace "1" {
+    open-on-output "DP-1"
+}
+
+workspace "2" {
+    open-on-output "DP-1"
+}
+
+workspace "3" {
+    open-on-output "DP-1"
+}
+
+workspace "4" {
+    open-on-output "DP-1"
+}
+
+workspace "5" {
+    open-on-output "DP-1"
+}
+
+workspace "6" {
+    open-on-output "DP-1"
+}
+
+workspace "7" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "8" {
+    open-on-output "HDMI-A-1"
+}
+
+workspace "9" {
+    open-on-output "HDMI-A-1"
+}
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Layout
@@ -200,7 +244,7 @@ animations {
 
 }
 
-workspace "1"
+/*workspace "1"
 workspace "2"
 workspace "3"
 workspace "4"
@@ -209,6 +253,8 @@ workspace "6"
 workspace "7"
 workspace "8"
 //workspace "9"
+*/
+
 
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -576,7 +622,7 @@ binds {
   // Ctrl+Alt+Delete { quit; }
 
   Mod+Space { spawn "fuzzel"; }
-  Mod+Ctrl+H { spawn-sh "dunstctl history-pop"; }
+  Mod+Ctrl+d { spawn-sh "dunstctl history-pop"; }
 
   // Powers off the monitors. To turn them back on, do any input like
   // moving the mouse or pressing any other key.
