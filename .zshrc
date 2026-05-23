@@ -16,7 +16,24 @@ wi() {
 
     sudo nmcli d wifi connect "$wifi_name" --ask
 }
-
+ddc() {
+	local display="$1"
+	local brightness="$2"
+	if [[ "${brightness}" == "" && "${display}" != "l" && "${display}" != "d" ]]; then
+		tmp=${brightness} 
+		brightness=${display}
+		display=${tmp}
+		ddcutil setvcp 10 ${brightness}
+	elif [[ "${display}" == "d" ]]; then
+		ddcutil --display 1 setvcp 10 1
+		ddcutil --display 2 setvcp 10 1
+	elif [[ "${display}" == "l" ]]; then
+		ddcutil --display 1 setvcp 10 80 
+		ddcutil --display 2 setvcp 10 100
+	else
+		ddcutil --display "${display}" setvcp 10 "${brightness}"
+	fi
+}
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
